@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="rw">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Burundi Digital Marketboard</title>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Theme color for OS UI -->
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Stylesheet (iba muri repository hamwe na index.html) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Short description (Kinyarwanda) -->
+  <meta name="description" content="Isoko rigezweho rya Burundi — ibicuruzwa, ubufasha kuri WhatsApp, PWA, na live chat." />
+
+  <!-- Favicon placeholders (optional: ushyire icons muri repo) -->
+  <link rel="icon" href="icons/icon-192.png" />
+</head>
+<body>
+  <!--
+    Full-screen background: video ifite poster (fallback).
+    - video: placeholder-bg.mp4
+    - poster/fallback: placeholder-poster.jpg
+    If browser cyangwa network byanze, poster izagaragara.
+  -->
+  <div id="bg-wrap" class="bg-wrap" aria-hidden="true">
+    <video id="bg-video" class="bg-video" autoplay muted loop playsinline poster="placeholder-poster.jpg">
+      <source src="placeholder-bg.mp4" type="video/mp4" />
+      <!-- Ako kanya browser itemera video, poster izagaragara -->
+    </video>
+
+    <!-- Overlay dim kugirango text isomeke neza -->
+    <div class="bg-overlay" aria-hidden="true"></div>
+  </div>
+
+  <!-- Dark mode toggle (persisted via localStorage) -->
+  <button id="dark-toggle" class="dark-toggle" aria-pressed="false" aria-label="Hindura Mode">Dark</button>
+
+  <!-- Main content wrapper -->
+  <main id="app" class="container" role="main">
+    <!-- HERO SECTION -->
+    <header id="hero" class="hero" role="banner">
+      <div class="hero-inner">
+        <h1 class="title">Karibu kuri Burundi Digital Marketboard</h1>
+        <p class="subtitle">Isoko rya digitale ryagutse — ibiciro byoroheje, serivisi yihuse, ndetse na WhatsApp support</p>
+        <div class="hero-ctas">
+          <a id="cta-buy" class="btn primary" href="#stock">Dushorere kugiciro gito</a>
+          <a class="btn ghost" href="#contact">Twandikire</a>
+        </div>
+        <p class="hero-note muted">Ibiheruka: PWA, Live Chat, na offline support kuri GitHub Pages</p>
+      </div>
+    </header>
+
+    <!-- STOCK / PRODUCTS SECTION -->
+    <section id="stock" class="section stock" aria-labelledby="stock-title">
+      <h2 id="stock-title" class="section-title">Ibicuruzwa byacu</h2>
+      <p class="muted">Reba ibicuruzwa; kanda kuri kimwe kugirango ubone ibisobanuro byihuse</p>
+
+      <!-- Products grid: products.js izuzuza iyi div -->
+      <div id="products-grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section testimonials" aria-labelledby="testi-title">
+      <h2 id="testi-title" class="section-title">Ibyavuzwe n'abakiriya</h2>
+      <div id="testi-grid" class="testi-grid" role="list">
+        <!-- JS izashyiramo testimonials -->
+      </div>
+    </section>
+
+    <!-- DAILY JOKE SPINNER -->
+    <section id="jokes" class="section jokes" aria-labelledby="joke-title">
+      <h2 id="joke-title" class="section-title">Urwenya rwa buri munsi</h2>
+      <div class="joke-card" role="region" aria-live="polite">
+        <p id="joke-text" class="joke-text">Tegereza urwenya...</p>
+        <div class="joke-actions">
+          <button id="joke-spin" class="btn">Tega urwenya rundi</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP + WHATSAPP SUPPORT + CONTACT FALLBACK -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Aho turi</h2>
+
+      <div class="contact-grid">
+        <!-- Google Maps embed kuri coordinates: Gihosha Gisandema -->
+        <div class="map-wrap" aria-hidden="false">
+          <iframe
+            title="Gihosha Gisandema"
+            src="https://www.google.com/maps?q=-3.4590,29.378&z=15&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Support column: WhatsApp link + QR + fallback contact form -->
+        <aside class="support-wrap" aria-labelledby="support-title">
+          <h3 id="support-title">Ubufasha bwa WhatsApp</h3>
+          <p class="muted">Twohereze ubutumwa; autoresponder izakira ubutumwa bwa mbere</p>
+
+          <!-- WhatsApp autoresponder link (placeholder phone) -->
+          <a class="btn whatsapp" href="https://wa.me/25700000000?text=Muraho%20ndashaka%20ubufasha" target="_blank" rel="noopener">Andika kuri WhatsApp</a>
+
+          <!-- QR code placeholder image -->
+          <div class="qr">
+            <img src="placeholder-qr.png" alt="QR code - WhatsApp" width="160" height="160" />
+            <small class="muted">Skana QR ukoresheje WhatsApp</small>
+          </div>
+
+          <!-- Fallback contact form (igaragazwa iyo Tawk.to itari online)
+               NB: iyi form ibika ubutumwa muri localStorage gusa (nta backend) -->
+          <div id="offline-contact" class="offline-contact hidden" aria-hidden="true">
+            <h4>Ohereza ubutumwa (nta server)</h4>
+            <form id="contact-form" autocomplete="off">
+              <label>Izina
+                <input name="name" required />
+              </label>
+              <label>Email
+                <input name="email" type="email" required />
+              </label>
+              <label>Ubutumwa
+                <textarea name="message" rows="4" required></textarea>
+              </label>
+              <button type="submit" class="btn">Ohereza (bizabikwa kuri mudasobwa yawe)</button>
+            </form>
+            <p id="contact-saved" class="muted hidden">Ubutumwa bwabitswe neza (local only)</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="contacts">
+          <h4>Contact</h4>
+          <p>Email: info@example.com</p>
+          <p>Telefoni: +257 000 000</p>
+        </div>
+
+        <div class="socials">
+          <h4>Social</h4>
+          <div class="icons">
+            <a href="#" aria-label="Facebook" class="icon">FB</a>
+            <a href="#" aria-label="Instagram" class="icon">IG</a>
+            <a href="#" aria-label="X" class="icon">X</a>
+          </div>
+        </div>
+
+        <div class="footer-qr">
+          <img src="placeholder-qr.png" alt="QR code - contact" width="120" height="120" />
+          <small class="muted">Skana kugira ngo utubone</small>
+        </div>
+      </div>
+
+      <p class="copyright">© <span id="year"></span> Burundi Digital Marketboard</p>
+    </footer>
+  </main>
+
+  <!-- Data files (products + jokes). main.js izakora rendering -->
+  <script src="products.js"></script>
+  <script src="jokes.js"></script>
+
+  <!-- Main JS: rendering, dark-mode, jokes, PWA registration, Tawk fallback -->
+  <script src="main.js"></script>
+
+  <!-- Tawk.to embed (placeholder ID)
+       - Iyo Tawk iri online, izagaragaza live chat
+       - Iyo Tawk iremera offline, main.js izerekana local fallback form
+       Siga ID yawe ya Tawk.to ukurikije property yawe: embed.tawk.to/YOUR_ID/default
+  -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/000000000/default'; // shyiramo Tawk property id yawe
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+
+  <!-- Small inline accessibility & progressive enhancement helpers -->
+  <script>
+    // Ensure year shown in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Improve skip-to-content for keyboard users (optional)
+    (function(){
+      const cta = document.getElementById('cta-buy');
+      if(cta) cta.addEventListener('keydown', e => {
+        if(e.key === 'Enter') cta.click();
+      });
+    })();
+  </script>
+</body>
+</html>
+```[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Raashi77/voting/tree/ffe88bb6725a324b66d19adc08a99c6ec5e33e34/lib%2Findex.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")
