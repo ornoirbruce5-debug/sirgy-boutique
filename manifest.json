@@ -1,0 +1,21 @@
+{
+  "name": "Burundi Digital Marketboard",
+  "short_name": "Marketboard",
+  "start_url": "/?utm_source=web_app_manifest",
+  "display": "standalone",
+  "background_color": "#071129",
+  "theme_color": "#0f172a",
+  "description": "Isoko rya digitale rigezweho kuri GitHub Pages - ibicuruzwa, WhatsApp support, PWA, na live chat.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
