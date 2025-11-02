@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Burundi Digital Marketboard</title>
 
-  <!-- PWA manifest -->
-  <link rel="manifest" href="manifest.json" />
-
-  <!-- Theme color for OS UI -->
+  <!-- Meta description (Kinyarwanda) -->
+  <meta name="description" content="Isoko rya digitale rigezweho: ibicuruzwa, WhatsApp, PWA, na live chat ya Tawk.to." />
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- Stylesheet -->
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="icons/icon-512.png" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Short description (Kinyarwanda) -->
-  <meta name="description" content="Isoko rigezweho rya Burundi — ibicuruzwa, ubufasha kuri WhatsApp, PWA, na live chat." />
-
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="icons/icon-192.png" />
 </head>
 <body>
-  <!-- Full-screen background video with poster fallback -->
+  <!-- Background video + overlay -->
   <div id="bg-wrap" class="bg-wrap" aria-hidden="true">
     <video id="bg-video" class="bg-video" autoplay muted loop playsinline poster="placeholder-poster.jpg">
       <source src="placeholder-bg.mp4" type="video/mp4" />
@@ -29,27 +26,29 @@
     <div class="bg-overlay" aria-hidden="true"></div>
   </div>
 
-  <!-- Dark mode toggle -->
-  <button id="dark-toggle" class="dark-toggle" aria-pressed="false" aria-label="Hindura Mode">Dark</button>
+  <!-- Dark mode toggle (emoji updates in main.js) -->
+  <button id="dark-toggle" class="dark-toggle" aria-pressed="false" aria-label="Hindura mode">🌜 Dark</button>
 
   <main id="app" class="container" role="main">
     <!-- HERO -->
     <header id="hero" class="hero" role="banner">
       <div class="hero-inner">
         <h1 class="title">Karibu kuri Burundi Digital Marketboard</h1>
-        <p class="subtitle">Isoko rya digitale ryagutse — ibiciro byoroheje, serivisi yihuse, ndetse na WhatsApp support</p>
+        <p class="subtitle">
+          Isoko rya digitale ryagutse — ibiciro byoroheje, serivisi yihuse, ndetse na WhatsApp support.
+        </p>
         <div class="hero-ctas">
-          <a id="cta-buy" class="btn primary" href="#stock">Dushorere kugiciro gito</a>
+          <a id="cta-buy" class="btn primary" href="#stock">Reba ibicuruzwa</a>
           <a class="btn ghost" href="#contact">Twandikire</a>
         </div>
-        <p class="hero-note muted">Ibiheruka: PWA, Live Chat, na offline support kuri GitHub Pages</p>
+        <p class="hero-note muted">PWA, Live Chat, na offline support kuri GitHub Pages</p>
       </div>
     </header>
 
-    <!-- STOCK / PRODUCTS -->
+    <!-- PRODUCTS -->
     <section id="stock" class="section stock" aria-labelledby="stock-title">
       <h2 id="stock-title" class="section-title">Ibicuruzwa byacu</h2>
-      <p class="muted">Reba ibicuruzwa; kanda kuri kimwe kugirango ubone ibisobanuro byihuse</p>
+      <p class="muted">Kanda ku gikoresho kugira ngo ubone ibisobanuro no kuduhamagara kuri WhatsApp.</p>
       <div id="products-grid" class="grid" aria-live="polite"></div>
     </section>
 
@@ -59,7 +58,7 @@
       <div id="testi-grid" class="testi-grid" role="list"></div>
     </section>
 
-    <!-- DAILY JOKE SPINNER -->
+    <!-- DAILY JOKE -->
     <section id="jokes" class="section jokes" aria-labelledby="joke-title">
       <h2 id="joke-title" class="section-title">Urwenya rwa buri munsi</h2>
       <div class="joke-card" role="region" aria-live="polite">
@@ -70,47 +69,53 @@
       </div>
     </section>
 
-    <!-- MAP + WHATSAPP SUPPORT + CONTACT FALLBACK -->
+    <!-- CONTACT + MAP + WHATSAPP + FALLBACK -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="section-title">Aho turi</h2>
+      <h2 id="contact-title" class="section-title">Aho turi & Ubufasha</h2>
 
       <div class="contact-grid">
-        <div class="map-wrap" aria-hidden="false">
+        <!-- Map -->
+        <div class="map-wrap">
           <iframe
-            title="Gihosha Gisandema"
-            src="https://www.google.com/maps?q=-3.4590,29.378&z=15&output=embed"
+            title="Ntahangwa, Bujumbura Mairie"
+            src="https://www.google.com/maps?q=-3.359,29.354&z=12&output=embed"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
 
+        <!-- Support -->
         <aside class="support-wrap" aria-labelledby="support-title">
           <h3 id="support-title">Ubufasha bwa WhatsApp</h3>
-          <p class="muted">Twohereze ubutumwa; autoresponder izakira ubutumwa bwa mbere</p>
+          <p class="muted">Twohereze ubutumwa; autoresponder izakira ubutumwa bwa mbere.</p>
 
-          <!-- WhatsApp link (replace phone number in repo files) -->
-          <a class="btn whatsapp" href="https://wa.me/25700000000?text=Muraho%20ndashaka%20ubufasha" target="_blank" rel="noopener">Andika kuri WhatsApp</a>
+          <!-- WhatsApp CTA (hindura numero yawe) -->
+          <a class="btn whatsapp" href="https://wa.me/25700000000?text=Muraho%20ndashaka%20ubufasha" target="_blank" rel="noopener">
+            Andika kuri WhatsApp
+          </a>
 
+          <!-- QR -->
           <div class="qr">
             <img src="placeholder-qr.png" alt="QR code - WhatsApp" width="160" height="160" />
             <small class="muted">Skana QR ukoresheje WhatsApp</small>
           </div>
 
-          <!-- Fallback local contact form (shown when Tawk.to offline) -->
+          <!-- Fallback local contact form (igaragazwa iyo Tawk.to itari online) -->
           <div id="offline-contact" class="offline-contact hidden" aria-hidden="true">
-            <h4>Ohereza ubutumwa (nta server)</h4>
+            <h4>Ohereza ubutumwa (nta seriveri ikoreshwa)</h4>
             <form id="contact-form" autocomplete="off">
-              <label>Izina
+              <label>Izina ryawe
                 <input name="name" required />
               </label>
-              <label>Email
+              <label>Imeli yawe
                 <input name="email" type="email" required />
               </label>
-              <label>Ubutumwa
+              <label>Ubutumwa bwawe
                 <textarea name="message" rows="4" required></textarea>
               </label>
-              <button type="submit" class="btn">Ohereza (bizabikwa kuri mudasobwa yawe)</button>
+              <button type="submit" class="btn">Ohereza ubutumwa</button>
             </form>
-            <p id="contact-saved" class="muted hidden">Ubutumwa bwabitswe neza (local only)</p>
+            <p id="contact-saved" class="muted hidden">✅ Ubutumwa bwawe bwabitswe neza kuri mudasobwa yawe (offline).</p>
           </div>
         </aside>
       </div>
@@ -120,13 +125,13 @@
     <footer class="site-footer" role="contentinfo">
       <div class="footer-grid">
         <div class="contacts">
-          <h4>Contact</h4>
+          <h4>Amakuru y’itumanaho</h4>
           <p>Email: info@example.com</p>
           <p>Telefoni: +257 000 000</p>
         </div>
 
         <div class="socials">
-          <h4>Social</h4>
+          <h4>Imbuga nkoranyambaga</h4>
           <div class="icons">
             <a href="#" aria-label="Facebook" class="icon">FB</a>
             <a href="#" aria-label="Instagram" class="icon">IG</a>
@@ -149,31 +154,29 @@
   <script src="jokes.js"></script>
   <script src="main.js"></script>
 
-  <!-- Start of Tawk.to Script (user-provided embed inserted here) -->
+  <!-- Tawk.to embed (ID yawe ishyizwemo) -->
   <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/6907492929711919546deaed/1j927bjd7';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/6907492929711919546deaed/1j927bjd7';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
   </script>
-  <!-- End of Tawk.to Script -->
 
   <!-- Small inline helpers -->
   <script>
-    // Show current year in footer
+    // Year in footer (backup; main.js also sets this)
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Accessibility: ensure CTA keyboard activation
+    // Keyboard accessibility for CTA
     (function(){
       const cta = document.getElementById('cta-buy');
-      if(cta) cta.addEventListener('keydown', e => { if(e.key === 'Enter') cta.click(); });
+      if (cta) cta.addEventListener('keydown', e => { if (e.key === 'Enter') cta.click(); });
     })();
   </script>
 </body>
 </html>
-```[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/Raashi77/voting/tree/ffe88bb6725a324b66d19adc08a99c6ec5e33e34/lib%2Findex.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/cbregantejs/web/tree/799c6eeccf94159ce1ccee3a722f08bd95c9647b/layouts%2Fchat.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")
