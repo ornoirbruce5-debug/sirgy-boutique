@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="rw">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Broskie Boutique — Offline</title>
+  <meta name="theme-color" content="#f7c6e0" />
+
+  <!-- Pastel, youthful, girly vibes -->
+  <style>
+    :root{
+      --pink:#f7c6e0;
+      --soft:#fff0f6;
+      --lilac:#c9b6ff;
+      --mint:#b7f3d4;
+      --text:#2a2a2a;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background: linear-gradient(135deg, var(--soft), var(--pink) 45%, var(--lilac) 85%);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .card{
+      width:min(680px, 92vw);
+      background:#ffffffee;
+      backdrop-filter: blur(6px);
+      border-radius:22px;
+      box-shadow: 0 12px 30px rgba(247,198,224,0.35);
+      padding:24px;
+      border: 2px solid #ffe3f1;
+      animation: pop 320ms ease-out;
+    }
+    @keyframes pop{from{transform:scale(.98);opacity:.8}to{transform:scale(1);opacity:1}}
+    .brand{
+      display:flex; align-items:center; gap:12px; margin-bottom:8px;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:12px;
+      background: radial-gradient(circle at 30% 30%, var(--pink), var(--mint));
+      border: 2px solid #fff;
+      box-shadow: 0 6px 16px rgba(190, 148, 190, .28);
+    }
+    h1{
+      font-size:clamp(22px, 4.2vw, 28px);
+      margin:0;
+    }
+    .tagline{
+      margin:4px 0 14px;
+      color:#5a5a5a;
+      font-size:clamp(14px, 2.8vw, 16px);
+    }
+    .panel{
+      background:var(--soft);
+      border:1.5px dashed #ffd6e8;
+      border-radius:16px;
+      padding:18px;
+      display:grid; gap:10px;
+    }
+    .emoji{
+      font-size:clamp(24px, 6vw, 32px);
+    }
+    .tips{
+      display:grid; gap:8px; margin:8px 0;
+    }
+    .tip{
+      display:flex; gap:8px; align-items:flex-start;
+      background:#fff; border:1px solid #ffeaf3; border-radius:12px;
+      padding:10px 12px;
+    }
+    .btns{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    button, a.button{
+      appearance:none; border:none; cursor:pointer;
+      background:linear-gradient(135deg, var(--pink), var(--lilac));
+      color:#2a2a2a; font-weight:600;
+      padding:10px 14px; border-radius:14px;
+      box-shadow: 0 6px 14px rgba(199, 163, 214, .35);
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+      text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    }
+    button:hover, a.button:hover{ transform: translateY(-2px); filter:brightness(1.03); }
+    button.secondary, a.button.secondary{
+      background:#fff; border:2px solid #ffd6e8;
+    }
+    .mininote{
+      margin-top:12px; font-size:13px; color:#666;
+    }
+    footer{
+      margin-top:16px; display:flex; justify-content:space-between; align-items:center;
+      font-size:12px; color:#666;
+    }
+    .status-dot{
+      width:10px; height:10px; border-radius:50%;
+      background:#ff7aa8; display:inline-block; margin-right:6px;
+      box-shadow: 0 0 0 3px #ffe3f1;
+    }
+    .ok{ background:#37d67a; box-shadow: 0 0 0 3px #d9fde9; }
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .links a{ color:#7a4a64; text-decoration:none; font-weight:600 }
+    .links a:hover{ text-decoration:underline }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-label="Offline page">
+    <div class="brand" aria-label="Brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Broskie Boutique</h1>
+        <p class="tagline">Youthful • Girly • Modern — pastel vibes ✨</p>
+      </div>
+    </div>
+
+    <section class="panel" aria-label="Offline message">
+      <div class="emoji" aria-hidden="true">💖📶</div>
+      <p style="margin:0">
+        Urimo offline ubu. Kora reconnect hanyuma dusubire kukwereka imyenda myiza ya Broskie Boutique.
+      </p>
+
+      <div class="tips" aria-label="Quick tips">
+        <div class="tip">
+          <span aria-hidden="true">🌐</span>
+          <div>
+            <strong>Suzuma internet:</strong><br />
+            Reba uko Wi‑Fi / Mobile Data ihagaze, wongeye kugerageza gufungura urupapuro.
+          </div>
+        </div>
+        <div class="tip">
+          <span aria-hidden="true">🔄</span>
+          <div>
+            <strong>Ongera ugerageze:</strong><br />
+            Niba uri online, kanda “Refresh” cyangwa “Subira kuri Home”.
+          </div>
+        </div>
+        <div class="tip">
+          <span aria-hidden="true">📲</span>
+          <div>
+            <strong>Shyira kuri Home Screen:</strong><br />
+            Ukoreshe menu (⋮) → Add to Home Screen kugira ngo usure offline byoroshye.
+          </div>
+        </div>
+      </div>
+
+      <div class="btns">
+        <button id="retryBtn" type="button" aria-label="Refresh page">🔄 Refresh</button>
+        <a class="button secondary" href="/index.html" aria-label="Go to Home">🏠 Subira kuri Home</a>
+      </div>
+
+      <p class="mininote">
+        Note: Ibice bimwe by’amasomo n’amashusho bishobora kudahita biboneka igihe uri offline.
+      </p>
+    </section>
+
+    <footer>
+      <div>
+        <span id="netDot" class="status-dot" aria-hidden="true"></span>
+        <span id="netText">Status: Offline</span>
+      </div>
+      <div class="links" aria-label="Helpful links">
+        <a href="https://privacy.microsoft.com/en-us/privacystatement" rel="noopener">Privacy</a>
+        <a href="#" aria-label="Contact support">Support</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Update network status indicator
+    function updateNetStatus(){
+      const dot = document.getElementById('netDot');
+      const txt = document.getElementById('netText');
+      if (navigator.onLine) {
+        dot.classList.add('ok');
+        txt.textContent = 'Status: Online';
+      } else {
+        dot.classList.remove('ok');
+        txt.textContent = 'Status: Offline';
+      }
+    }
+    updateNet
