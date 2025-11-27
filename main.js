@@ -215,6 +215,7 @@ function setupSmoothScroll() {
 function setupContactFallback() {
   const fallback = document.getElementById('offline-contact');
   const form = document.getElementById('contact-form');
+  const savedNote = document.getElementById('contact-saved');
   if (!fallback || !form) return;
 
   let decided = false;
@@ -266,8 +267,17 @@ function setupContactFallback() {
     window.location.href = `mailto:info@example.com?subject=${subject}&body=${body}`;
 
     form.reset();
+    if (savedNote) {
+      savedNote.classList.remove('hidden');
+      setTimeout(() => savedNote.classList.add('hidden'), 4000);
+    }
   });
 }
+
+// Koresha setupContactFallback nyuma yo load
+document.addEventListener('DOMContentLoaded', setupContactFallback);
+
+
 /* ======================
    Service Worker registration
    ====================== */
