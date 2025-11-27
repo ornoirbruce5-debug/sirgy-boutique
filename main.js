@@ -264,7 +264,7 @@ function setupContactFallback() {
     const body = `Izina: ${izina}%0AImeli: ${imeli}%0AUbutumwa: ${ubutumwa}`;
 
     // Redirect to mailto
-    window.location.href = `mailto:info@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto: ornoirbruce5@gmail.com?subject=${subject}&body=${body}`;
 
     form.reset();
     if (savedNote) {
