@@ -71,16 +71,25 @@
     </section>
 
     <!-- DAILY JOKE -->
-    <section id="jokes" class="section jokes" aria-labelledby="joke-title">
-      <h2 id="joke-title" class="section-title">Blague za buri munsi🔥😂</h2>
-      <div class="joke-card" role="region" aria-live="polite" aria-label="Joke card">
-        <p id="joke-text" class="joke-text">iyindi blague ...</p>
-        <div class="joke-actions">
-          <button id="joke-spin" class="btn" aria-label="Fyonda ubone indi blague">fyonda ubone indi blague 😁</button>
-        </div>
-      </div>
-    </section>
-
+<section id="jokes" class="section jokes" aria-labelledby="joke-title">
+  <h2 id="joke-title" class="section-title">Blague za buri munsi🔥😂</h2>
+  
+  <div class="joke-card" role="region" aria-live="polite" aria-label="Joke card">
+    <!-- Joke container -->
+    <div id="joke-box" class="joke-box">
+      <p class="joke-text">Iyindi blague ...</p>
+      <!-- Image placeholder (izahindurwa na JS) -->
+      <img class="joke-image" alt="joke image" style="display:none; max-width:100%; border-radius:12px; margin-top:10px;">
+    </div>
+    
+    <!-- Actions -->
+    <div class="joke-actions">
+      <button id="joke-spin" class="btn" aria-label="Fyonda ubone indi blague">
+        fyonda ubone indi blague 😁
+      </button>
+    </div>
+  </div>
+</section>
     <!-- CONTACT + MAP + WHATSAPP + FALLBACK -->
     <section id="contact" class="section contact" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-title">Aho turi & Ubufasha</h2>
