@@ -4,7 +4,8 @@
    Includes: theme variables, background video + overlay, hero, grid (12-col),
    product cards, testimonials, jokes, contact fallback form, buttons,
    dark-mode support (.light), PWA/footer, reduced-motion, and micro-animations.
-   Language-neutral comments; replace brand hexes in :root as needed.
+   Language-neutral comments; replace
+brand hexes in :root as needed.
 ----------------------------------- */
 
 /* =========================
@@ -307,10 +308,29 @@ body {
   border-radius: var(--radius);
   padding: 18px;
   box-shadow: var(--shadow);
-  max-width: 720px; margin: 0 auto;
+  max-width: 720px;
+  margin: 0 auto;
 }
-#joke-text { font-size: 16px; }
-.joke-actions { margin-top: 12px; }
+
+/* Joke container */
+#joke-box {
+  font-size: 16px;
+  color: #222; /* kugira ngo text igaragarire kuri background */
+}
+
+/* Joke image */
+#joke-box img {
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Joke actions */
+.joke-actions {
+  margin-top: 12px;
+  text-align: center;
+}
 
 /* =========================
    Contact + map layout
