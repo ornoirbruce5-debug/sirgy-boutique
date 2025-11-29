@@ -7,9 +7,9 @@
 const PRODUCTS = [
   {
     id: "p-001",
-    name: "Air fox class",
+    name: "Air Jordan class",
     price: 145000,
-    description: "Iyi air fox ni 🔥 kuma style yose.",
+    description: "Iyi air Jordan ni 🔥 kuma style yose.",
     category: "Ibirato",
     stock: 24,
     image: "placeholder-product-1.jpg"
@@ -27,23 +27,23 @@ const PRODUCTS = [
     id: "p-003",
     name: "Triko",
     price: 10000,
-    description: "Trickot👕 kurigiciro gito.",
+    description: "Trickot👕 kugiciro gito.",
     category: "Impuzu",
     stock: 8,
     image: "placeholder-product-3.jpg"
   },
   {
     id: "p-004",
-    name: "maillot zikomeye",
+    name: "Tricot Jordan ⛹️‍♂️zikomeye",
     price: 45000,
-    description: "Maillot zikomeye zitandukanye.",
+    description: "Tricot zirahari kugiciro gito zikomeye kandi zitandukanye.",
     category: "Impuzu",
     stock: 31,
     image: "placeholder-product-4.jpg"
   },
   {
     id: "p-005",
-    name: "impuzu zabakobwa",
+    name: "Jeans zidacuya zikomeye cane",
     price: 10000,
     description: "Impuzu nziza cane, styles zitandukanye zabakobwa.",
     category: "Impuzu",
@@ -52,10 +52,10 @@ const PRODUCTS = [
   },
   {
     id: "p-006",
-    name: "Umupira w'imbeho",
+    name: "ibirato vyiza",
     price: 35000,
-    description: "Hari imipira y'imbeho myiza.",
-    category: "Impuzu",
+    description: "Hari ibirato bitandukanye karibu cane.",
+    category: "Ibirato",
     stock: 60,
     image: "placeholder-product-6.jpg"
   },
@@ -76,7 +76,39 @@ const PRODUCTS = [
       category: "Ibirato",
       stock: 10,
       image: "sandale.jpg"
-     }
+     },
+   {
+      id: "p-009",
+      name: "ibirato vyimanza",
+      price: 70000,
+      description: "ikirato cimara rubanza gikomeye vrt.",
+      stock: 3,
+      image: "placeholder-product-8.jpg"
+   },
+   {
+      id: "p-010",
+      name: "ibirato vyimanza",
+      price: 70000,
+      description: "ikirato cimara rubanza gikomeye vrt.",
+      stock: 3,
+      image: "placeholder-product-9.jpg"
+   },
+   {
+      id: "p-011",
+      name: "ibirato vyimanza",
+      price: 70000,
+      description: "ikirato cimara rubanza gikomeye vrt.",
+      stock: 3,
+      image: "placeholder-product-10.jpg"
+   },
+   {
+      id: "p-0012",
+      name: "ibirato vyimanza",
+      price: 70000,
+      description: "ikirato cimara rubanza gikomeye vrt.",
+      stock: 3,
+      image: "placeholder-product-11.jpg"
+   }
 ];
 
 // Export for environments that support modules (optional, safe for browser globals)
