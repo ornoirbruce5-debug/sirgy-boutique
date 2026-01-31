@@ -108,6 +108,14 @@ const PRODUCTS = [
       description: "ikirato cimara rubanza gikomeye vrt.",
       stock: 3,
       image: "placeholder-product-11.jpg"
+   },
+   {
+      id: "p-0013",
+      name: "Air fox 1",
+      price: 140000,
+      description: "first quality( qualité yambere.",
+      stock: 3,
+      image: "product12.jpg"
    }
 ];
 
