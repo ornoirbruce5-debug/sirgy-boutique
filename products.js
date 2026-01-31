@@ -128,7 +128,7 @@ const PRODUCTS = [
       {
         id: "p-0015",
         name: "high style",
-        price: "100000",
+        price: "850000",
         description: "izi zo sibwabwana🔥🤦😂",
         stock: 5,
         image: "product14.jpg"
@@ -136,11 +136,35 @@ const PRODUCTS = [
        {
           id: "p-0016",
           name: "👖 jeans",
-          price: "50000",
+          price: "100000",
           description: "jeans zo gusohoka",
           stock: 5,
           image: "product15.jpg"
-       }
+       },
+   {
+      id: "p-0017",
+      name: "jeans star🌟",
+      price: "100000",
+      description: "les gars muzi jeans nyinshi ariko iyi ni n⁰1",
+      stock: 6,
+      image: "product16.jpg"
+   },
+   {
+      id: "p-0018",
+      name: "beat 1",
+      price: "120000",
+      description: "Iyi beat irakubita vya hatari nababanyi bakayumva guys",
+      stock: 3,
+      image: "product17"
+   },
+   {
+      id: "p-0019",
+      name: "Air fox noir",
+      price: "140000",
+      description: "Iyi fox ya noir iratesa kuri styles zose guys",
+      stock: 10,
+      image: "product18.jpg"
+   }
 ];
 
 // Export for environments that support modules (optional, safe for browser globals)
