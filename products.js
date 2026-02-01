@@ -155,7 +155,7 @@ const PRODUCTS = [
       price: "120000",
       description: "Iyi beat irakubita vya hatari nababanyi bakayumva guys",
       stock: 3,
-      image: "product17"
+      image: "product18.jpg"
    },
    {
       id: "p-0019",
@@ -163,7 +163,7 @@ const PRODUCTS = [
       price: "140000",
       description: "Iyi fox ya noir iratesa kuri styles zose guys",
       stock: 10,
-      image: "product18.jpg"
+      image: "product17.jpg"
    }
 ];
 
