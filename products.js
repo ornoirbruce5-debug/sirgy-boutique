@@ -102,7 +102,7 @@ const PRODUCTS = [
       image: "placeholder-product-10.jpg"
    },
    {
-      id: "p-0012",
+      id: "p-012",
       name: "ibirato vyimanza",
       price: 370000,
       description: "ikirato cimara rubanza gikomeye vrt.",
@@ -110,7 +110,7 @@ const PRODUCTS = [
       image: "placeholder-product-11.jpg"
    },
    {
-      id: "p-0013",
+      id: "p-013",
       name: "Air fox 1",
       price: 140000,
       description: "first quality( qualité yambere.",
@@ -118,7 +118,7 @@ const PRODUCTS = [
       image: "product12.jpg"
    },
      {
-        id: "p-0014",
+        id: "p-014",
         name: "Style za sortie",
         price: "200000",
         description: "Izi styles ntizimenyerwa guys😁",
@@ -126,7 +126,7 @@ const PRODUCTS = [
         image: "product13.jpg"
      },
       {
-        id: "p-0015",
+        id: "p-015",
         name: "high style",
         price: "850000",
         description: "izi zo sibwabwana🔥🤦😂",
@@ -134,7 +134,7 @@ const PRODUCTS = [
         image: "product14.jpg"
       },
        {
-          id: "p-0016",
+          id: "p-016",
           name: "👖 jeans",
           price: "100000",
           description: "jeans zo gusohoka",
@@ -142,7 +142,7 @@ const PRODUCTS = [
           image: "product15.jpg"
        },
    {
-      id: "p-0017",
+      id: "p-017",
       name: "jeans star🌟",
       price: "100000",
       description: "les gars muzi jeans nyinshi ariko iyi ni qualité 1",
@@ -150,7 +150,7 @@ const PRODUCTS = [
       image: "product16.jpg"
    },
    {
-      id: "p-0018",
+      id: "p-018",
       name: "beat 1",
       price: "120000",
       description: "Iyi beat irakubita vya hatari nababanyi bakayumva guys",
@@ -158,12 +158,28 @@ const PRODUCTS = [
       image: "product18.jpg"
    },
    {
-      id: "p-0019",
+      id: "p-019",
       name: "Air fox noir",
       price: "140000",
       description: "Iyi fox ya noir iratesa kuri styles zose guys",
       stock: 10,
       image: "product17.jpg"
+   },
+      {
+         id: "p-020",
+         name: "HMD smartphone",
+         price: "500000",
+         description: "izimari nizamateka ni phone zirenze",
+         stock: 20,
+         image: "product19.jpg"
+      },
+   {
+      id: "p-021",
+      name: "Nokia C22",
+      price: "450000",
+      description: "téléphone zihuta cane",
+      stock: 20,
+      image: "product20.jpg"
    }
 ];
 
