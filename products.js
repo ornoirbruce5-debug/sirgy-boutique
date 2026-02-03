@@ -113,7 +113,7 @@ const PRODUCTS = [
       id: "p-013",
       name: "Air fox 1",
       price: 140000,
-      description: "first quality( qualité yambere.",
+      description: "first quality qualité yambere.",
       stock: 3,
       image: "product12.jpg"
    },
